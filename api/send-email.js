@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       from: 'Portfolio Contact <onboarding@resend.dev>', // use verified domain/address
       to: 'marutpiumakkho@gmail.com',
       replyTo: email,
-      subject: `New message from ${name}`,
+      subject: `New message from ${name} (${email})`,
       text: message,
     });
     res.status(200).json({ status: 'ok' });
