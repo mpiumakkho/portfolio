@@ -1,4 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { ReactTyped } from 'react-typed';
 import { personalInfo } from "../data/personal";
 
 const socialLinks = [
@@ -11,31 +12,62 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center text-center bg-white px-4"
+      className="min-h-[50vh] flex items-center bg-transparent px-4 pt-24 md:pt-0 scroll-mt-24"
     >
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Hi There, I'm <span className="text-blue-600">{personalInfo.name}</span>
-      </h1>
-      <p className="text-2xl mb-6">{personalInfo.title}</p>
-      <a
-        href="#contact"
-        className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
-      >
-        Hire Me
-      </a>
-      <div className="mt-8 flex gap-4">
-        {socialLinks.map((social) => (
-          <a
-            key={social.label}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-600 hover:text-blue-600"
-          >
-            <social.icon />
-            <span className="sr-only">{social.label}</span>
-          </a>
-        ))}
+      <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center" style={{width:'70%'}}>
+        {/* Left - text (below avatar on mobile) */}
+        <div className="order-2 md:order-1 text-left md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Hello, I'm <br />
+            <span className="text-blue-600 whitespace-nowrap">{personalInfo.name}</span>
+          </h1>
+          <p className="text-2xl mb-6">
+            I am{' '}
+            <span className="text-blue-600 font-semibold">
+              <ReactTyped
+                strings={["Full-Stack Developer", "Backend Developer"]}
+                typeSpeed={60}
+                backSpeed={40}
+                loop
+              />
+            </span>
+          </p>
+          <p className="mb-6 leading-relaxed text-lg text-gray-600">
+          {personalInfo.extra}
+          </p>
+
+          {/* Download button + social icons */}
+          <div className="mt-8 flex justify-center md:justify-start items-center gap-4 flex-wrap">
+            <a
+              href="/assets/Resume.pdf"
+              download
+              className="border-2 border-blue-600 text-blue-600 px-5 py-2 rounded-md hover:bg-blue-600 hover:text-white transition text-sm font-medium bg-transparent"
+            >
+              Download CV
+            </a>
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-md border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition"
+              >
+                <social.icon size={20} />
+                <span className="sr-only">{social.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right - Avatar (top on mobile) */}
+        <div className="order-1 md:order-2 flex justify-center md:justify-end">
+          <img
+            src={personalInfo.avatar}
+            alt="avatar"
+            className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover shadow-lg"
+          />
+        </div>
       </div>
     </section>
   );

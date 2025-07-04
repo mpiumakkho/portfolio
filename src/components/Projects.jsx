@@ -1,38 +1,11 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { projects } from '../data/projects';
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: '🛒',
-      liveLink: '#',
-      githubLink: '#',
-    },
-    {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'Firebase', 'Tailwind CSS', 'DnD Kit'],
-      image: '📋',
-      liveLink: '#',
-      githubLink: '#',
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard that displays current conditions, forecasts, and weather maps using multiple APIs.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
-      image: '🌤️',
-      liveLink: '#',
-      githubLink: '#',
-    },
-  ];
 
   return (
     <section id="work" className="py-20 bg-white">
@@ -44,8 +17,8 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            My <span className="text-[#3886db]">Work</span>
+          <h2 className="text-3xl ext-5xl font-bold text-gray-800 mb-6">
+            Personal Projects
           </h2>
           <div className="w-24 h-1 bg-[#3886db] mx-auto mb-8"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -82,7 +55,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-[#d1f0ff] text-[#3886db] px-2 py-1 rounded-md text-xs font-medium"
+                      className="bg-[#d1f0ff] text-[#3886db] px-2 py-1 rounded-md text-xs font-normal"
                     >
                       {tech}
                     </span>
@@ -97,8 +70,8 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-[#3886db] hover:text-[#2563eb] transition-colors duration-200"
                   >
-                    <FaExternalLinkAlt size={16} />
-                    <span className="text-sm font-medium">Live Demo</span>
+                    {/* <FaExternalLinkAlt size={16} />
+                    <span className="text-sm font-normal">Live Demo</span> */}
                   </a>
                   <a
                     href={project.githubLink}
@@ -107,7 +80,7 @@ const Projects = () => {
                     className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors duration-200"
                   >
                     <FaGithub size={16} />
-                    <span className="text-sm font-medium">Code</span>
+                    <span className="text-sm font-normal">Code</span>
                   </a>
                 </div>
               </div>

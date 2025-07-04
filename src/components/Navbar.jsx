@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -24,9 +24,13 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-[#3886db]">
-            Portfolio
-          </div>
+          <a
+            href="#hero"
+            className="flex items-center gap-2 text-2xl font-bold text-gray-700 hover:text-blue-600 transition"
+          >
+            <img src="/assets/m-tech-circuit-resize.png" alt="logo" className="w-7 h-7 object-contain" />
+            <span>arut Piumakkho</span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
@@ -34,9 +38,10 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#3886db] transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-[#3886db] transition-colors duration-200 font-medium relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3886db] transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
