@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -11,6 +12,13 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
 function App() {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   return (
     <div className="relative">
       <ParticlesBackground />
