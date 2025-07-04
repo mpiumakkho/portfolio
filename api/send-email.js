@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: 'Portfolio Contact <no-reply@yourdomain.com>', // use verified domain/address
+      from: 'Portfolio Contact <onboarding@resend.dev>', // use verified domain/address
       to: 'marutpiumakkho@gmail.com',
       replyTo: email,
       subject: `New message from ${name}`,
