@@ -1,8 +1,56 @@
-export const skillGroups = [
-  { group: "Languages", items: ["Java", "JavaScript", "SQL", "Python"] },
-  { group: "Backend", items: ["Spring Boot", "RESTful APIs"] },
-  { group: "Frontend", items: ["HTML/CSS", "Bootstrap", "Thymeleaf", "React", "Angular", "Next.js"] },
-  { group: "Database", items: ["PostgreSQL", "MySQL"] },
-  { group: "Tools", items: ["Git", "Maven", "IntelliJ", "NetBeans", "Eclipse", "VSCode", "Docker", "JasperReport"] },
-  { group: "Methodologies", items: ["Agile"] }
+import { FaCogs, FaCss3Alt, FaDocker, FaGitAlt, FaHtml5, FaJava, FaReact } from 'react-icons/fa';
+import {
+  SiAngular,
+  SiApachecouchdb,
+  SiApachemaven,
+  SiExpress,
+  SiFastapi,
+  SiJavascript,
+  SiMysql,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiSpring,
+  SiTailwindcss,
+  SiTypescript,
+} from 'react-icons/si';
+
+export const categories = [
+  {
+    title: 'Core Technologies',
+    items: [
+      { name: 'Java', icon: FaJava },
+      { name: 'Spring Boot', icon: SiSpring },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'HTML5', icon: FaHtml5 },
+      { name: 'CSS3', icon: FaCss3Alt },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'RESTful APIs', icon: FaCogs },
+      { name: 'Git', icon: FaGitAlt },
+      { name: 'Maven', icon: SiApachemaven },
+      { name: 'Postman', icon: SiPostman },
+    ],
+  },
+  {
+    title: 'Additional Skills',
+    items: [
+      // Frontend
+      { name: 'React', icon: FaReact },
+      { name: 'Angular', icon: SiAngular },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      // Backend
+      { name: 'Python', icon: SiPython },
+      { name: 'FastAPI', icon: SiFastapi },
+      { name: 'Node.js', icon: SiNodedotjs },
+      { name: 'Express.js', icon: SiExpress },
+      // Database
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'CouchDB', icon: SiApachecouchdb },
+      // Tools
+      { name: 'Docker', icon: FaDocker },
+      { name: 'Jira', icon: FaCogs },
+    ],
+  },
 ]; 
