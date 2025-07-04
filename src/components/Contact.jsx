@@ -39,9 +39,8 @@ const Contact = () => {
       setError('Please enter a valid email address.');
       return;
     }
-    const endpoint = import.meta.env.MODE === 'development'
-      ? 'http://localhost:3000/api/send-email'
-      : '/api/send-email';
+    // fetch('/api/send-email', {
+    const endpoint = '/api/send-email';
     fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
