@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -8,15 +8,15 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Education', href: '#education' },
-    { name: 'Work', href: '#work' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <motion.nav
+    <Motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           <a
             href="#hero"
-            className="flex items-center gap-2 text-2xl font-bold text-gray-700 hover:text-blue-600 transition"
+            className="flex items-center gap-1 text-2xl font-bold text-gray-700 hover:text-blue-600 transition"
           >
             <img src="/assets/m-tech-circuit-resize.png" alt="logo" className="w-7 h-7 object-contain" />
             <span>arut Piumakkho</span>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -77,10 +77,10 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </div>
-    </motion.nav>
+    </Motion.nav>
   );
 };
 

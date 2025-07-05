@@ -3,17 +3,13 @@ import {
   SiAngular,
   SiApachecouchdb,
   SiApachemaven,
-  SiExpress,
-  SiFastapi,
   SiJavascript,
   SiMysql,
-  SiNodedotjs,
   SiPostgresql,
   SiPostman,
-  SiPython,
   SiSpring,
   SiTailwindcss,
-  SiTypescript,
+  SiTypescript
 } from 'react-icons/si';
 
 export const categories = [
@@ -41,10 +37,10 @@ export const categories = [
       { name: 'TypeScript', icon: SiTypescript },
       { name: 'Tailwind CSS', icon: SiTailwindcss },
       // Backend
-      { name: 'Python', icon: SiPython },
-      { name: 'FastAPI', icon: SiFastapi },
-      { name: 'Node.js', icon: SiNodedotjs },
-      { name: 'Express.js', icon: SiExpress },
+      // { name: 'Python', icon: SiPython },
+      // { name: 'FastAPI', icon: SiFastapi },
+      // { name: 'Node.js', icon: SiNodedotjs },
+      // { name: 'Express.js', icon: SiExpress },
       // Database
       { name: 'MySQL', icon: SiMysql },
       { name: 'CouchDB', icon: SiApachecouchdb },

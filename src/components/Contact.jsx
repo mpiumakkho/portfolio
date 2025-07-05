@@ -39,7 +39,6 @@ const Contact = () => {
       setError('Please enter a valid email address.');
       return;
     }
-    // fetch('/api/send-email', {
     const endpoint = '/api/send-email';
     fetch(endpoint, {
       method: 'POST',
@@ -55,16 +54,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white px-4">
+    <section id="contact" className="py-20 bg-transparent px-4" data-aos="fade-up">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-2">Get In Touch</h2>
         <div className="w-16 h-0.5 bg-blue-600 mx-auto mb-12" />
 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-6 md:col-span-1">
-            {infoCards.map((card) => (
+            {infoCards.map((card, idx) => (
               <div
                 key={card.label}
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
                 className="flex items-start p-6 bg-white rounded shadow-sm border hover:shadow-md transition"
               >
                 <card.icon className="text-blue-600 text-xl mr-4" />

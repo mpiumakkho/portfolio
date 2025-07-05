@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-[50vh] flex items-center bg-transparent px-4 pt-24 md:pt-0 scroll-mt-24"
+      className="min-h-[40vh] flex items-center bg-transparent px-4 pt-24 md:pt-0 scroll-mt-24"
     >
       <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center" style={{width:'70%'}}>
         {/* Left - text (below avatar on mobile) */}
