@@ -91,7 +91,7 @@ const Projects = () => {
           </p>
         </Motion.div>
 
-        {/* สไลด์โปรเจ็กต์ (ใช้ปุ่มเลื่อนด้านนอก) */}
+        {/* Project slider (navigation buttons placed outside) */}
         <div className="relative">
           <Swiper
             modules={[Navigation, Pagination]}
@@ -144,7 +144,7 @@ const Projects = () => {
           ))}
           </Swiper>
 
-          {/* ปุ่มเลื่อนไป-กลับวางนอก Swiper */}
+          {/* External prev/next buttons for Swiper */}
           <button className="projects-prev absolute -left-6 top-1/2 -translate-y-1/2 bg-white border shadow rounded-full p-2 text-blue-600 disabled:opacity-30">
             <FaChevronLeft />
           </button>

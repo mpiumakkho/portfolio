@@ -12,12 +12,10 @@ const Footer = () => {
     <footer className="py-8 bg-transparent">
       <div className="max-w-7xl mx-auto px-4">
         <div className="bg-white rounded-md shadow-sm hover:shadow-md transition p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          {/* Copyright */}
           <p className="text-sm text-gray-600">
             © {new Date().getFullYear()} Portfolio. All rights reserved.
           </p>
 
-          {/* Social Icons */}
           <div className="flex space-x-4">
             {socialLinks.map((social) => (
               <a
