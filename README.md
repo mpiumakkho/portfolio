@@ -2,6 +2,10 @@
 
 This repository contains my developer portfolio – a single-page site that presents my background, skills, experience and open-source projects.
 
+## Live Demo
+
+View the portfolio at <https://portfolio-mpiumakkho.vercel.app/>
+
 ## Purpose
 
 * Showcase my profile to recruiters / clients
