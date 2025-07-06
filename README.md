@@ -4,7 +4,7 @@ This repository contains my developer portfolio – a single-page site that pres
 
 ## Live Demo
 
-View the portfolio at <https://portfolio-mpiumakkho.vercel.app/>
+You can visit my portfolio at <https://portfolio-mpiumakkho.vercel.app/>
 
 ## Purpose
 
@@ -30,7 +30,6 @@ View the portfolio at <https://portfolio-mpiumakkho.vercel.app/>
 * Skills grid with rotating language icons
 * Projects carousel that fetches repos via GitHub API and shows core technologies
 * Contact form with email delivery (Resend)
-* Dark-mode ready (Tailwind class strategy)
 
 ## Local Development
 

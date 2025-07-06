@@ -26,12 +26,17 @@ const Projects = () => {
     fetch(`https://api.github.com/users/${USER}/repos?sort=updated`, { headers })
       .then((r) => r.json())
       .then((data) => {
+        // Optional overrides for live links when the GitHub `homepage` field is outdated
+        const liveLinkOverrides = {
+          portfolio: 'https://portfolio-mpiumakkho.vercel.app/',
+        };
+
         const mapped = data.map((r) => ({
           id: r.id,
           title: r.name,
           description: r.description,
           image: '🗂️',
-          liveLink: r.homepage || '',
+          liveLink: liveLinkOverrides[r.name] || r.homepage || '',
           githubLink: r.html_url,
           languages_url: r.languages_url,
         }));
@@ -129,7 +134,7 @@ const Projects = () => {
                 </div>
                     <div className="flex space-x-4 mt-auto justify-center">
                   {project.liveLink && (
-                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="button">
+                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="button-secondary">
                           Live
                     </a>
                   )}

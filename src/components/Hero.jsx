@@ -39,8 +39,7 @@ const Hero = () => {
           {/* Download button + social icons */}
           <div className="mt-8 flex justify-center md:justify-start items-center gap-4 flex-wrap">
             <a
-              href="/assets/Resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1MkBwiKyeD9tuafcBaZDjaAyxIcovUsua/view"
               className="border-2 border-blue-600 text-blue-600 px-5 py-2 rounded-md hover:bg-blue-600 hover:text-white transition text-sm font-medium bg-transparent"
             >
               Download CV
