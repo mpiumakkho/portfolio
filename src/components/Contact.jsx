@@ -25,6 +25,7 @@ const Contact = () => {
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [error, setError] = useState('');
+  const [modal, setModal] = useState({ open: false, text: '', ok: true });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,7 +37,7 @@ const Contact = () => {
     // simple email regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) {
-      setError('Please enter a valid email address.');
+      setModal({ open: true, text: 'Please enter a valid email address.', ok: false });
       return;
     }
     const endpoint = '/api/send-email';
@@ -47,10 +48,10 @@ const Contact = () => {
     })
       .then((res) => {
         if (!res.ok) throw new Error();
-        alert('Message sent!');
+        setModal({ open: true, text: 'Your message has been sent successfully. Thank you for contacting me.', ok: true });
         setForm({ name: '', email: '', message: '' });
       })
-      .catch(() => setError('Failed to send. Please try again later.'));
+      .catch(() => setModal({ open: true, text: 'Unable to send your message at this time. Please try again later.', ok: false }));
   };
 
   return (
@@ -77,7 +78,7 @@ const Contact = () => {
             ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="md:col-span-2 bg-white rounded shadow-sm border p-6 space-y-4">
+          <form onSubmit={handleSubmit} noValidate className="md:col-span-2 bg-white rounded shadow-sm border p-6 space-y-4">
             <input
               type="text"
               name="name"
@@ -96,7 +97,6 @@ const Contact = () => {
               required
               className={`border p-3 rounded w-full focus:outline-none focus:ring-1 ${error ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-600'}`}
             />
-            {error && <p className="text-red-600 text-sm">{error}</p>}
             <textarea
               rows="4"
               name="message"
@@ -114,6 +114,18 @@ const Contact = () => {
             </button>
           </form>
         </div>
+
+        {modal.open && (
+          <div className="fixed inset-0 bg-transparent flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full text-center space-y-4">
+              <p className={`${modal.ok ? 'text-green-600' : 'text-red-600'} font-medium`}>{modal.text}</p>
+              <button
+                onClick={() => setModal({ ...modal, open: false })}
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm"
+              >Close</button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { FaCogs, FaCss3Alt, FaDocker, FaGitAlt, FaHtml5, FaJava, FaReact } from 'react-icons/fa';
+import { FaCogs, FaCss3Alt, FaDocker, FaFileAlt, FaGitAlt, FaHtml5, FaJava, FaReact } from 'react-icons/fa';
 import {
   SiAngular,
   SiApachecouchdb,
@@ -46,6 +46,7 @@ export const categories = [
       { name: 'CouchDB', icon: SiApachecouchdb },
       // Tools
       { name: 'Docker', icon: FaDocker },
+      { name: 'JasperReport', icon: FaFileAlt },
       { name: 'Jira', icon: FaCogs },
     ],
   },
